@@ -20,9 +20,9 @@
 # GENERAL
 
 CC		?=	gcc
-CFLAGS		+=	-I. `pkg-config --cflags cairo gtk+-2.0` -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+CFLAGS		+=	-I. `pkg-config --cflags cairo gtk+-2.0 lv2` -O3 -Wall -fomit-frame-pointer -funroll-loops -ffast-math -c -fPIC -DPIC
 CFLAGS		+=	-Wno-deprecated-declarations
-LDFLAGS		+=	-shared -Lwidgets -L../plugin/library -linv_widgets -linv_common -lm `pkg-config --libs cairo gtk+-2.0` -Wl,--no-undefined
+LDFLAGS		+=	-shared -Lwidgets -L../plugin/library -linv_widgets -linv_common -lm `pkg-config --libs cairo gtk+-2.0 lv2`
 
 
 GUIS		=	inv_compressor_gui.so \

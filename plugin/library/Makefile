@@ -19,7 +19,7 @@
 # GENERAL
 
 CC		?=	gcc
-CFLAGS		+=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+CFLAGS		+=	-I. -O3 -Wall -fomit-frame-pointer -funroll-loops -ffast-math -c -fPIC -DPIC `pkg-config --cflags lv2`
 
 
 
