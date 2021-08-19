@@ -18,9 +18,9 @@
 
 # GENERAL
 
-CC		=	gcc
-LD		=	ld
-CFLAGS		=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+CC		?=	gcc
+LD		?=	ld
+CFLAGS		+=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
 
 
 

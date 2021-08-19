@@ -19,10 +19,10 @@
 
 # GENERAL
 
-CC		=	gcc
-LD		=	gcc
-CFLAGS		=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
-LDFLAGS		=	-shared -Llibrary -lc -lm  -linv_common -fPIC -DPIC
+CC		?=	gcc
+LD		?=	gcc
+CFLAGS		+=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+LDFLAGS		+=	-shared -Llibrary -lc -lm  -linv_common -fPIC -DPIC
 
 PLUGINS		=	inv_compressor.so \
                         inv_delay.so \
