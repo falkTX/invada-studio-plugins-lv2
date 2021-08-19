@@ -21,6 +21,7 @@
 
 CC		?=	gcc
 CFLAGS		+=	-I. `pkg-config --cflags cairo gtk+-2.0` -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+CFLAGS		+=	-Wno-deprecated-declarations
 LDFLAGS		+=	-shared -Lwidgets -L../plugin/library -linv_widgets -linv_common -lm `pkg-config --libs cairo gtk+-2.0` -Wl,--no-undefined
 
 

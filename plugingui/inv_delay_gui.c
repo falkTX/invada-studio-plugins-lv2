@@ -86,7 +86,7 @@ typedef struct {
 
 
 static LV2UI_Handle 
-instantiateIDelayGui(const struct _LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
+instantiateIDelayGui(const struct LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
 {
 	IDelayGui *pluginGui = (IDelayGui *)malloc(sizeof(IDelayGui));
 	if(pluginGui==NULL)
@@ -772,7 +772,7 @@ inv_delay_update_delaycalc(GtkWidget *tree, float tempo)
 	GtkTreeIter   	iter;
 	gfloat 		length;
 	gint		i;
-	char		notelabel[8];
+	char		notelabel[16];
 	
 	length=240.0/tempo; //assumes beat length in time signature is a crotchet
 

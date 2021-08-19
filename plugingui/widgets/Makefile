@@ -20,6 +20,7 @@
 
 CC		?=	gcc
 CFLAGS		+=	-I. `pkg-config --cflags gtk+-2.0`  -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+CFLAGS		+=	-Wno-deprecated-declarations -Wno-unused-but-set-variable
 
 
 

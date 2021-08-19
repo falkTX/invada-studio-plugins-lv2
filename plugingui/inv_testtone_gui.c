@@ -62,7 +62,7 @@ typedef struct {
 
 
 static LV2UI_Handle 
-instantiateIToneGui(const struct _LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
+instantiateIToneGui(const struct LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
 {
 
 	IToneGui *pluginGui = (IToneGui *)malloc(sizeof(IToneGui));
@@ -516,7 +516,7 @@ inv_tone_create_testtone(GtkWidget *tree)
 	GtkListStore 	*liststore;
 	GtkTreeIter   	iter;
 	gint		i,mul;
-	char		notelabel[8];
+	char		notelabel[16];
 
 	// create empty store
 	liststore = gtk_list_store_new( TV1_NUM_COLS, 

@@ -73,7 +73,7 @@ typedef struct {
 
 
 static LV2UI_Handle 
-instantiateIErReverbGui(const struct _LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
+instantiateIErReverbGui(const struct LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
 {
 	IErReverbGui *pluginGui = (IErReverbGui *)malloc(sizeof(IErReverbGui));
 	if(pluginGui==NULL)

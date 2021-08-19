@@ -65,7 +65,7 @@ typedef struct {
 
 
 static LV2UI_Handle 
-instantiateIFilterGui(const struct _LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
+instantiateIFilterGui(const struct LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
 {
 	IFilterGui *pluginGui = (IFilterGui *)malloc(sizeof(IFilterGui));
 	if(pluginGui==NULL)

@@ -69,7 +69,7 @@ typedef struct {
 
 
 static LV2UI_Handle 
-instantiateIPhaserGui(const struct _LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
+instantiateIPhaserGui(const struct LV2UI_Descriptor* descriptor, const char* plugin_uri, const char* bundle_path, LV2UI_Write_Function write_function, LV2UI_Controller controller, LV2UI_Widget* widget, const LV2_Feature* const* features)
 {
 	IPhaserGui *pluginGui = (IPhaserGui *)malloc(sizeof(IPhaserGui));
 	if(pluginGui==NULL)
