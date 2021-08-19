@@ -21,7 +21,7 @@
 
 CC		?=	gcc
 CFLAGS		+=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
-LDFLAGS		+=	-shared -Llibrary -lc -lm  -linv_common -fPIC -DPIC
+LDFLAGS		+=	-shared -Llibrary -linv_common -lm -Wl,--no-undefined
 
 PLUGINS		=	inv_compressor.so \
                         inv_delay.so \
