@@ -19,8 +19,7 @@
 
 # GENERAL
 
-CC		=	gcc
-LD		=	gcc
+CC		?=	gcc
 CFLAGS		+=	-I. `pkg-config --cflags cairo gtk+-2.0` -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
 LDFLAGS		+=	-shared -Lwidgets -L../plugin/library -lc -lm -linv_widgets -linv_common `pkg-config --libs cairo gtk+-2.0` -fPIC -DPIC
 
@@ -68,5 +67,5 @@ clean:
 
 %.so: %.o
 	@echo "Creating  $@"
-	@$(LD) -o $@ $< $(LDFLAGS)
+	@$(CC) -o $@ $< $(LDFLAGS)
 
