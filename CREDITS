@@ -1,0 +1,15 @@
+The author would like to thank the following people for their help,
+support, comments, suggestions, patches etc.
+
+Denise Faulkner - for putting up with me :)
+Thorsten Wilms, Steve Harris, Dave Robillard - for the LV2 spec, without which this wouldn't be possible.
+Nedko Arnaudov, Dave Robillard, Philipp Überbacher - for being another pair of eyes (or is that ears?). 
+Damon Chaplin - for discovering some uninitialised varaiables and providing a patch. 
+Philipp Überbacher - 'DESTDIR' patch. 
+Dave Robillard - Port Groups patch. 
+
+Big thanks to the people making the host applications - without which this software would be useless:
+Ardour [http://ardour.org]
+lv2Rack [http://home.gna.org/zynjacku/]
+ 
+
