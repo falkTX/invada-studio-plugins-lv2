@@ -2,16 +2,15 @@
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix doap:  <http://usefulinc.com/ns/doap#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix units: <http://lv2plug.in/ns/extension/units#> .
+@prefix units: <http://lv2plug.in/ns/extensions/units#> .
 @prefix uiext: <http://lv2plug.in/ns/extensions/ui#> .
-@prefix pg:    <http://lv2plug.in/ns/dev/port-groups#> .
+@prefix pg:    <http://lv2plug.in/ns/ext/port-groups#> .
 
 
 <http://invadarecords.com/plugins/lv2/meter/gui>
     a uiext:GtkUI;
     uiext:binary <inv_meter_gui.so>;
-    uiext:requiredFeature uiext:makeResident ;
-    uiext:optionalFeature uiext:noUserResize ;
+    lv2:optionalFeature uiext:noUserResize ;
 
     uiext:portNotification [ 
 	uiext:plugin <http://invadarecords.com/plugins/lv2/meter>  ;
@@ -147,7 +146,7 @@
 	foaf:homepage <http://www.invadarecords.com/Downloads.php?ID=00000264> ;
 	foaf:mbox <mailto:fraser@arkhostings.com> ;
     ] ;
-    lv2:optionalFeature lv2:hardRtCapable ;
+    lv2:optionalFeature lv2:hardRTCapable ;
     uiext:ui <http://invadarecords.com/plugins/lv2/meter/gui>;
 
     lv2:port [
@@ -164,29 +163,29 @@
 	lv2:index 1 ;
 	lv2:symbol "inL" ;
 	lv2:name "L In" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/compressor/stereo#in> ;
-	pg:role pg:leftChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/compressor/stereo#in> ;
+	lv2:designation pg:left ;
     ] , [
 	a lv2:InputPort, lv2:AudioPort ;
 	lv2:index 2 ;
 	lv2:symbol "inR" ;
 	lv2:name "R In" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/compressor/stereo#in> ;
-	pg:role pg:rightChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/compressor/stereo#in> ;
+	lv2:designation pg:right ;
     ] , [
 	a lv2:OutputPort, lv2:AudioPort ;
 	lv2:index 3 ;
 	lv2:symbol "outL" ;
 	lv2:name "L Out" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/compressor/stereo#out> ;
-	pg:role pg:leftChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/compressor/stereo#out> ;
+	lv2:designation pg:left ;
    ] , [
 	a lv2:OutputPort, lv2:AudioPort ;
 	lv2:index 4 ;
 	lv2:symbol "outR" ;
 	lv2:name "R Out" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/compressor/stereo#out> ;
-	pg:role pg:rightChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/compressor/stereo#out> ;
+	lv2:designation pg:right ;
    ] , [
 	a lv2:OutputPort, lv2:ControlPort ;
 	lv2:index 5 ;

@@ -1,19 +1,18 @@
-@prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
-@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-@prefix doap:  <http://usefulinc.com/ns/doap#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix units: <http://lv2plug.in/ns/extension/units#> .
-@prefix uiext: <http://lv2plug.in/ns/extensions/ui#> .
-@prefix epp:   <http://lv2plug.in/ns/dev/extportinfo#> .
-@prefix dc:    <http://dublincore.org/documents/dcmi-namespace/> .
-@prefix pg:    <http://lv2plug.in/ns/dev/port-groups#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix doap:   <http://usefulinc.com/ns/doap#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
+@prefix uiext:  <http://lv2plug.in/ns/extensions/ui#> .
+@prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
 
 
 <http://invadarecords.com/plugins/lv2/filter/gui>
     a uiext:GtkUI;
     uiext:binary <inv_filter_gui.so>;
-    uiext:requiredFeature uiext:makeResident ;
-    uiext:optionalFeature uiext:noUserResize ;
+    lv2:optionalFeature uiext:noUserResize ;
 
     uiext:portNotification [ 
 	uiext:plugin <http://invadarecords.com/plugins/lv2/filter/lpf/mono> ;
@@ -87,9 +86,9 @@
 	foaf:mbox <mailto:fraser@arkhostings.com> ;
     ] ;
     doap:license <http://usefulinc.com/doap/licenses/gpl> ;
-    lv2:optionalFeature lv2:hardRtCapable ;
+    lv2:optionalFeature lv2:hardRTCapable ;
     uiext:ui <http://invadarecords.com/plugins/lv2/filter/gui> ;
-    dc:replaces <urn:ladspa:3302> ;
+    dct:replaces <urn:ladspa:3302> ;
 
     lv2:port [
 	a lv2:InputPort, lv2:ControlPort ;
@@ -109,7 +108,7 @@
 	lv2:minimum 20 ;
 	lv2:maximum 20000 ;
 	units:unit units:hz ;
-        lv2:portProperty epp:logarithmic ;
+        lv2:portProperty pprops:logarithmic ;
     ] , [
 	a lv2:InputPort, lv2:ControlPort ;
 	lv2:index 2 ;
@@ -190,9 +189,9 @@
 	foaf:mbox <mailto:fraser@arkhostings.com> ;
     ] ;
     doap:license <http://usefulinc.com/doap/licenses/gpl> ;
-    lv2:optionalFeature lv2:hardRtCapable ;
+    lv2:optionalFeature lv2:hardRTCapable ;
     uiext:ui <http://invadarecords.com/plugins/lv2/filter/gui> ;
-    dc:replaces <urn:ladspa:3304> ;
+    dct:replaces <urn:ladspa:3304> ;
 
     lv2:port [
 	a lv2:InputPort, lv2:ControlPort ;
@@ -212,7 +211,7 @@
 	lv2:minimum 20 ;
 	lv2:maximum 20000 ;
 	units:unit units:hz ;
-        lv2:portProperty epp:logarithmic ;
+        lv2:portProperty pprops:logarithmic ;
     ] , [
 	a lv2:InputPort, lv2:ControlPort ;
 	lv2:index 2 ;
@@ -254,15 +253,15 @@
 	lv2:index 6 ;
 	lv2:symbol "inL" ;
 	lv2:name "L In" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#in> ;
-	pg:role pg:leftChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#in> ;
+	lv2:designation pg:left ;
     ] , [
 	a lv2:OutputPort, lv2:AudioPort ;
 	lv2:index 7 ;
 	lv2:symbol "outL" ;
 	lv2:name "L Out" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#out> ;
-	pg:role pg:leftChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#out> ;
+	lv2:designation pg:left ;
    ] , [
 	a lv2:OutputPort, lv2:ControlPort ;
 	lv2:index 8 ;
@@ -294,15 +293,15 @@
 	lv2:index 11 ;
 	lv2:symbol "inR" ;
 	lv2:name "R In" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#in> ;
-	pg:role pg:rightChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#in> ;
+	lv2:designation pg:right ;
     ] , [
 	a lv2:OutputPort, lv2:AudioPort ;
 	lv2:index 12 ;
 	lv2:symbol "outR" ;
 	lv2:name "R Out" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#out> ;
-	pg:role pg:rightChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/lpf/stereo#out> ;
+	lv2:designation pg:right ;
     ] .
 
 <http://invadarecords.com/plugins/lv2/filter/hpf/mono>
@@ -319,9 +318,9 @@
 	foaf:mbox <mailto:fraser@arkhostings.com> ;
     ] ;
     doap:license <http://usefulinc.com/doap/licenses/gpl> ;
-    lv2:optionalFeature lv2:hardRtCapable ;
+    lv2:optionalFeature lv2:hardRTCapable ;
     uiext:ui <http://invadarecords.com/plugins/lv2/filter/gui> ;
-    dc:replaces <urn:ladspa:3303> ;
+    dct:replaces <urn:ladspa:3303> ;
 
     lv2:port [
 	a lv2:InputPort, lv2:ControlPort ;
@@ -341,7 +340,7 @@
 	lv2:minimum 20 ;
 	lv2:maximum 20000 ;
 	units:unit units:hz ;
-        lv2:portProperty epp:logarithmic ;
+        lv2:portProperty pprops:logarithmic ;
     ] , [
 	a lv2:InputPort, lv2:ControlPort ;
 	lv2:index 2 ;
@@ -422,9 +421,9 @@
 	foaf:mbox <mailto:fraser@arkhostings.com> ;
     ] ;
     doap:license <http://usefulinc.com/doap/licenses/gpl> ;
-    lv2:optionalFeature lv2:hardRtCapable ;
+    lv2:optionalFeature lv2:hardRTCapable ;
     uiext:ui <http://invadarecords.com/plugins/lv2/filter/gui> ;
-    dc:replaces <urn:ladspa:3305> ;
+    dct:replaces <urn:ladspa:3305> ;
 
     lv2:port [
 	a lv2:InputPort, lv2:ControlPort ;
@@ -444,7 +443,7 @@
 	lv2:minimum 20 ;
 	lv2:maximum 20000 ;
 	units:unit units:hz ;
-        lv2:portProperty epp:logarithmic ;
+        lv2:portProperty pprops:logarithmic ;
     ] , [
 	a lv2:InputPort, lv2:ControlPort ;
 	lv2:index 2 ;
@@ -486,15 +485,15 @@
 	lv2:index 6 ;
 	lv2:symbol "inL" ;
 	lv2:name "L In" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#in> ;
-	pg:role pg:leftChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#in> ;
+	lv2:designation pg:left ;
     ] , [
 	a lv2:OutputPort, lv2:AudioPort ;
 	lv2:index 7 ;
 	lv2:symbol "outL" ;
 	lv2:name "L Out" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#out> ;
-	pg:role pg:leftChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#out> ;
+	lv2:designation pg:left ;
    ] , [
 	a lv2:OutputPort, lv2:ControlPort ;
 	lv2:index 8 ;
@@ -526,14 +525,14 @@
 	lv2:index 11 ;
 	lv2:symbol "inR" ;
 	lv2:name "R In" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#in> ;
-	pg:role pg:rightChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#in> ;
+	lv2:designation pg:right ;
     ] , [
 	a lv2:OutputPort, lv2:AudioPort ;
 	lv2:index 12 ;
 	lv2:symbol "outR" ;
 	lv2:name "R Out" ;
-	pg:inGroup <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#out> ;
-	pg:role pg:rightChannel ;
+	pg:group <http://invadarecords.com/plugins/lv2/filter/hpf/stereo#out> ;
+	lv2:designation pg:right ;
     ] .
 
