@@ -25,7 +25,7 @@
 #include <math.h>
 #include <gtk/gtk.h>
 #include <lv2.h>
-#include "lv2_ui.h"
+#include "lv2/lv2plug.in/ns/extensions/ui/ui.h"
 #include "widgets/widgets.h"
 #include "widgets/meter-peak.h"
 #include "widgets/meter-phase.h"
