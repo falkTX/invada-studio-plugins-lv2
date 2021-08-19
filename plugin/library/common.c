@@ -27,6 +27,10 @@
 #include <lv2.h>
 #include "common.h"
 
+#ifdef _WIN32
+inline double drand48(void) { return (double)rand()/RAND_MAX; }
+inline void srand48(long int val) { srand(val); }
+#endif
 
 /* a function that checks to see if a control has been changed and calls the provided conversion fuction */
 void 
@@ -137,12 +141,12 @@ SpaceSub(float *SpacePos, float *SpaceEnd, unsigned long SpaceSize, unsigned lon
 float 
 InoClip(float in, float * drive)
 {
-	float out; 
+	float out;
 	if ( fabs(in) < 0.7 ) {
 	  	out = in;
 		*drive=0;
 	} else { 
-	  out = (in>0) ? 
+	  out = (in>0) ?
 	            (  0.7 + 0.3 * (1-pow(2.718281828, 3.33333333*(0.7-in)))):
 	            ( -0.7 - 0.3 * (1-pow(2.718281828, 3.33333333*(0.7+in))));
 		*drive=fabs(in) - fabs(out); /* out is always going to be lower than in */
